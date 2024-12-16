@@ -1,0 +1,638 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -100;
+  filter: blur(5px);
+}
+
+
+
+#thisformPoint{
+  position: absolute;
+  width: 10px; 
+  height: 10px; 
+  background-color: red; 
+  border-radius: 50%; 
+  transform: translate(-50%, -50%); 
+}
+
+body {
+    font-family: poppins;
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: gray;
+    background-image: url('../img/bg.jpg');
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
+    color: #DFF8EB;
+    
+}
+
+
+nav{
+    background-color: rgba(0, 0, 0,0.4);
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+    border-radius: 10px;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    gap: 10px;
+}
+
+.ToCont{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.navRest{
+    display: flex;
+    gap: 30px;
+}
+
+.navRest a{
+    text-decoration: none;
+    color: #DFF8EB;
+}
+
+
+.playerCard{
+    background-color: #48483A;
+    width: 300px;
+
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    padding: 10px;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.4);
+    transition: transform 1s ease;
+    transform-style: preserve-3d;
+}
+.playerCard:hover{
+    transform: rotateY(360deg); 
+    
+}
+.playerCard img{
+    background-color: #5C574F;
+    border-radius: 50%;
+}
+
+.intopCard{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+}
+.intopCard img{
+    width: 20px;
+    height: 20px;
+}
+
+.midCard{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+    justify-content: space-around;
+}
+
+#addPlayerBtn{
+    float: right !important;
+    background-color: #74776B;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: ease-out 100ms;
+}
+.inmainPlayer{
+    width: 60%;
+}
+
+#addPlayerBtn:hover{
+    transform: scale(1.2);
+    transition: ease-in 100ms;
+}
+
+.ModalADD{
+    position: absolute !important;
+    background-color: #5C574F;
+    width: 500px;
+    height: 700px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    top: 20%;
+    left:50%;
+    
+}
+
+#playerImg{
+    width: 100px;
+    height: 100px
+}
+
+/* Mid card hover buttons */
+.btn-update {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .btn-update:hover {
+    background-color: #555;
+  }
+
+  .btn-delete{
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  .btn-delete:hover {
+    background-color: #555;
+  }
+
+  #playertable{
+    
+    list-style-type: none;
+    margin: 5px;
+    padding: 5px;
+    background-color: rgba(0, 0, 0,0.4);
+    border-radius: 50px 0px 0px 50px;
+    width: 300px;
+    height: 70vh;
+    overflow: auto;
+  }
+
+    #playertable::-webkit-scrollbar {
+      width: 10px; 
+  }
+
+  #playertable::-webkit-scrollbar-track {
+      background-color: transparent; 
+  }
+
+  #playertable::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.3); 
+      border-radius: 10px; 
+      border: 2px solid rgba(255, 255, 255, 0.5); 
+  }
+
+  #playertable::-webkit-scrollbar-thumb:hover {
+      background-color: rgba(255, 255, 255, 0.5); 
+  }
+
+
+  .inPcard{
+    display: flex;
+    text-decoration: none;
+    gap: 15px;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    margin: 30px;
+    padding: 10px;
+  }
+
+  .inPcard img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+
+  }
+
+  #Field{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #buildMain{
+    display: flex !important;
+    flex-direction: row ;
+  }
+
+  .grass {
+    display: flex;
+    flex-direction: column;
+    font-size: 0; 
+  }
+  
+  .grass div {
+    font-size: 0; 
+
+  }
+  
+  .field {
+    position: relative;
+    width: 400px;  
+    height: 625px; 
+      
+
+  }
+  
+  
+  .grass {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+   
+  }
+  
+  
+  .fieldLayout {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  #fieldOutline{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  #midCircle {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%; 
+    border: 2px solid white;
+  }
+  #midLine{
+    position: absolute;
+    width: 390px;
+  }
+  #fieldborder{
+    position: absolute;
+    width: 390px;
+    height: 615px;
+    border: 2px solid white;
+  }
+  #goalBox1{
+    position: absolute;
+    width: 150px;
+    height: 80px;
+    top: -5px;
+    border: 2px solid white;
+  }
+  #goalBox2{
+    position: absolute;
+    width: 150px;
+    height: 80px;
+    top: 530px;
+    border: 2px solid white;
+  }
+
+  #rightMenu:hover {
+    color: gold;
+    font-weight: bold;
+  }
+
+  .leftSide{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+  }
+
+  .tofix{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 5px solid rgba(0, 0, 0, 0.4);
+    border-radius: 30px;
+    display: flex;
+    font-weight: 900;
+    font-size: 30px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #withinspan34{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    gap: 0px;
+    color: gold;
+  }
+  #withinspan34 p{
+    padding: 0px;
+    margin: 0px;
+  }
+  #withinspan44{
+    border-bottom: 3px solid gold;
+    font-weight: bold;
+  }
+
+  #logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #logo img{
+    width: 200px;
+    height: auto;
+  }
+
+  .ModalADD {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%; 
+    max-width: 400px;
+    background-color: #2c2c2c;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    color: #fff;
+    z-index: 1000;
+    display: none; 
+    font-family: Arial, sans-serif;
+    font-size: 14px; 
+}
+
+.ModalADD label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    font-size: 13px; 
+}
+
+.ModalADD input[type="text"],
+.ModalADD input[type="file"],
+.ModalADD input[type="number"],
+.ModalADD select {
+    width: 95%; 
+    padding: 6px; 
+    margin-bottom: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #1e1e1e;
+    color: #fff;
+    font-size: 13px; 
+    box-sizing: border-box; 
+}
+
+.ModalADD select {
+    appearance: none;
+}
+
+.ModalADD button {
+    width: 100%;
+    padding: 8px; 
+    background-color: #191970;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px; 
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.ModalADD button:hover {
+    background-color: #e03e00;
+}
+
+#closeModalADD {
+    background-color: #191970;
+    margin-bottom: 10px;
+}
+
+#closeModalADD:hover {
+    background-color: #cc0000;
+}
+
+
+.ModalADD::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+
+@media (max-width: 600px) {
+    .ModalADD {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .ModalADD input[type="text"],
+    .ModalADD input[type="file"],
+    .ModalADD input[type="number"],
+    .ModalADD select {
+        width: 100%; 
+    }
+
+    .ModalADD button {
+        font-size: 12px;
+    }
+}
+
+
+
+.playerCard {
+  width: 250px;
+  background: #2e2e2e; 
+  border: 1px solid #444; 
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  margin: 10px;
+  display: inline-block;
+  text-align: center;
+  color: #fff; 
+}
+
+#fixiated{
+  display: flex;
+}
+#span34{
+  width: 80%;
+}
+
+
+#RAT {
+  background-color: #ffcc00; /* Bright yellow */
+  color: white; /* Black text for contrast */
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px 10px;
+  margin: 0;
+}
+
+
+#playerImg {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-bottom: 2px solid #555; 
+}
+
+
+.intopCard {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.intopCard img {
+  width: 20px;
+  height: 15px;
+  object-fit: cover;
+  border: 1px solid #555; 
+  border-radius: 2px;
+}
+
+
+.midCard {
+  background: #3a3a3a; 
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+}
+
+.midCard p {
+  margin: 0;
+  padding: 5px;
+  background: #444; 
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  color: #ddd; 
+}
+
+
+.cardActions {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  background: #2b2b2b; 
+  border-top: 1px solid #444;
+}
+
+.cardActions button {
+  border: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+.cardActions .btn-update {
+  background: #4caf50; 
+  color: white;
+}
+
+.cardActions .btn-update:hover {
+  background: #45a049; 
+}
+
+
+.cardActions .btn-delete {
+  background: #f44336; 
+  color: white;
+}
+
+.cardActions .btn-delete:hover {
+  background: #e53935; 
+}
+
+.ToCont {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+
+@media (max-width: 768px) {
+  #logo{
+    display: none;
+  }
+  .ToCont {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .ToCont {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+
+.navRest a{
+  background-color: rgba(0,0,0,0.5);
+  padding: 10px;
+  border-radius: 30px;
+}
+
+.navRest a:hover{
+  background-color: rgba(255,0,0,0.5);
+
+}

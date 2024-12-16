@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/builder.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="SoccerLab">
+    <meta property="og:description" content="Create Football match formations with this ez to use tool">
+    <meta name="keywords" content="football, messi, cr7">
+    <meta name="author" content="Oussama Benoujja">
+    <meta property="og:url" content="https://www.example.com">
+    <title>SoccerLAB</title>
+</head>
+<body>
+
+    <nav>
+        <a id="logo">
+            <img src="../assets/img/logo.png" >
+        </a>
+        <div class="navRest">
+            <a href="build.html">Builder</a>
+            <a href="players.html">Players</a>
+        </div>
+    </nav>
+    <main id="buildMain">
+
+        <div class="formSide">
+            <select name="formations" id="formations@" class="form444">
+                <option value="4-4-2">4-4-2</option>
+                <option value="4-3-3">4-3-3</option>
+                <option value="4-2-3-1">4-2-3-1</option>
+                <option value="3-5-2">3-5-2</option>
+                <option value="3-4-3">3-4-3</option>
+                <option value="5-3-2">5-3-2</option>
+                <option value="5-4-1">5-4-1</option>
+            </select>
+            <button class="rest444" id="resetBtn">RESET</button>
+        </div>
+          
+
+        <div id="Field">
+            <div class="field">
+                <div class='grass'>
+                </div>
+                <div class='fieldLayout'>
+                  <hr id='fieldborder'>
+                  <hr id='goalBox1'>
+                  <hr id='goalBox2'>
+                  <span id='midCircle'></span>
+                  <hr id='midLine'>
+                </div>
+                <div id="fieldOutline">
+
+                </div>
+              </div>
+        </div>
+        
+        <div class="leftSide">
+            <div class="tofix">
+                <label>FORMATION</label>
+                <div id="formationCount">
+                    0-0-0
+                </div>
+            </div>
+            <div id="playertable">
+            </div>
+        </div>
+
+    </main>
+</body>
+<script src="../assets/js/builder.js"></script>
+</html>
